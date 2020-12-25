@@ -1,1 +1,1 @@
-# cashier_app
+# Cashier
