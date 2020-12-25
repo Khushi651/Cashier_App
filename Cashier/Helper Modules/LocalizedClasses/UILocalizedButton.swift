@@ -22,6 +22,7 @@ import UIKit
             setTitle(title, for: .normal)
         }
     }
+    
     override func awakeFromNib() {
         super.awakeFromNib()
 //        let title = self.title(for: .normal)?.localized()

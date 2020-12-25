@@ -42,8 +42,8 @@ public extension String{
     }
     
     var isBackspace: Bool {
-      let char = self.cString(using: String.Encoding.utf8)!
-      return strcmp(char, "\\b") == -92
+        let char = self.cString(using: String.Encoding.utf8)!
+        return strcmp(char, "\\b") == -92
     }
     
     //MARK:- Trim methods
@@ -69,7 +69,7 @@ public extension String{
     func replace(string: String, replacement: String) -> String {
         return self.replacingOccurrences(of: string, with: replacement, options: String.CompareOptions.literal, range: nil)
     }
-
+    
     func removeStringTill(occurence:String) -> String  {
         if let range = self.range(of: occurence) {
             let secondPart = self[range.upperBound...]
@@ -204,7 +204,7 @@ public extension String{
     
     func isValidURL() -> Bool {
         guard let url = URL(string: self)
-            else { return false }
+        else { return false }
         
         if !UIApplication.shared.canOpenURL(url) { return false }
         
@@ -260,7 +260,7 @@ public extension String{
             let to16 = utf16.index(utf16.startIndex, offsetBy: nsRange.location + nsRange.length, limitedBy: utf16.endIndex),
             let from = from16.samePosition(in: self),
             let to = to16.samePosition(in: self)
-            else { return nil }
+        else { return nil }
         return from ..< to
     }
     
@@ -275,16 +275,3 @@ public extension String{
     
 }
 
-extension String {
-    func toCustomizationArray() -> [CustomizationCategoryOption] {
-        do {
-            let data = self.data(using: .utf8)!
-            let decoder = JSONDecoder()
-            let arrCustomization = try decoder.decode([CustomizationCategoryOption].self, from: data)
-            return arrCustomization
-        }
-        catch{
-            return []
-        }
-    }
-}

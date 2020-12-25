@@ -9,4 +9,7 @@ import UIKit
 
 class OptionsColCell: UICollectionViewCell {
     
+    @IBOutlet weak var imgData: UIImageView!
+    @IBOutlet weak var lblData: UILabel!
+    
 }

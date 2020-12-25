@@ -10,6 +10,7 @@ import Foundation
 import UIKit
 
 @IBDesignable final class UILocalizedLabel: UILabel {
+  
     @IBInspectable var tableName: String? {
         didSet {
             guard let tableName = tableName else { text = text?.localized(tableName: "Localizable") ; return }

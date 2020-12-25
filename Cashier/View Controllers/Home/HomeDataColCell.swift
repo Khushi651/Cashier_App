@@ -8,5 +8,8 @@
 import UIKit
 
 class HomeDataColCell: UICollectionViewCell {
-    
+ 
+    @IBOutlet weak var imgFoodItem: UIImageView!
+    @IBOutlet weak var lblData: UILabel!
+
 }
